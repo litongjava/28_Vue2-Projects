@@ -6,19 +6,35 @@
 </template>
 
 <script>
+import api from "../api"
+
 export default {
   name: "covidMap",
   mounted() {
-    this.$charts.chinaMap("map")
+    api.getprovinceNcov().then(res => {
+      //console.log(res.data);
+      let allCities = [];
+      for (let i = 0; i < res.data.retdata.length; i++) {
+        var temp = {
+          name: res.data.retdata[i].xArea,
+          value: res.data.retdata[i].curConfirm
+        }
+        allCities.push(temp);
+      }
+      this.$charts.chinaMap("map",allCities)
+    }).catch(error => {
+      console.log(error)
+    });
   }
 }
 </script>
 
 <style scoped>
-.map{
+.map {
   width: 375px;
   height: 400px;
 }
+
 .title {
   border-top: 0.005rem solid #ebebeb;
   border-bottom: 0;
@@ -38,6 +54,7 @@ export default {
   line-height: 0.44rem;
   background: #fff;
 }
+
 .title::before {
   content: "";
   width: 5px;
