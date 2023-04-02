@@ -3,6 +3,7 @@
   <covidHeader/>
   <covid19Info :covid19-info="covid19Info"/>
   <caseNum :caseNum="caseNum"/>
+  <covidMap />
 </div>
 
 </template>
@@ -11,11 +12,13 @@
 import covidHeader from "../components/covidHeader";
 import covid19Info from "../components/covid19Info";
 import caseNum from "../components/caseNum";
+import covidMap from "../components/covidMap"
 import api from "../api";
+
 export default {
   name: 'HomeView',
   components: {
-    covidHeader, covid19Info,caseNum,
+    covidHeader, covid19Info,caseNum,covidMap
   },
   data(){
     return {
