@@ -130,3 +130,4 @@ node_modules/
 .DS_Store
 
 *.log
+package-lock.json
