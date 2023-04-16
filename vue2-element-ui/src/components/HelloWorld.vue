@@ -35,7 +35,8 @@ export default {
     }
   },
   created() {
-    axios.get(`http://localhost:9000/treeMenu/selectAllWithTree`)
+    //axios.get(`http://localhost:9000/treeMenu/selectAllWithTree`)
+    this.$request.get(this.$base.baseUrl+'/treeMenu/selectAllWithTree')
       .then(response => {
         //console.log(response);
         this.data = response.data.data.items;

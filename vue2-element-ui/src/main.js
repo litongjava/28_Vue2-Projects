@@ -11,6 +11,10 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';//声明使用 element-ui
 
 import router from './router'
+import request from './utils/request'
+import base from "@/api/base";
+Vue.prototype.$request=request;
+Vue.prototype.$base=base;
 Vue.use(ElementUI);
 
 new Vue({
