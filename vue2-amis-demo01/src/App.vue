@@ -20,8 +20,6 @@
 </div>
 </template>
 <script>
-// eslint-disable-next-line no-unused-vars
-import VueAmisSdk from 'vue-amis-sdk'
 import 'vue-amis-sdk/lib/vue-amis-sdk.css'
 
 export default {
